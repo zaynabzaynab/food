@@ -1,0 +1,202 @@
+/* BASIC SETUP */
+@include google-font("Lato:100,300,400,300italic");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  &:focus {
+    outline: none;
+  }
+}
+
+html,
+body {
+  background: #fff;
+  color: $grey;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  @include big-tablet {
+    font-size: 18px;
+  }
+  @include small-tablet {
+    font-size: 16px;
+  }
+}
+
+/*LINKS*/
+a {
+  text-decoration: none;
+  color: $grey;
+}
+
+.clearfix {
+  zoom: 1;
+}
+.clearfix::after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+  @include desktop {
+    padding: 0 2%;
+  }
+  @include small-tablet {
+    padding: 0 4%;
+  }
+}
+
+.col {
+  @include small-tablet {
+    width: 100%;
+    margin: 0 0 4% 0;
+  }
+}
+
+.box {
+  padding: 1%;
+}
+
+.box p {
+  font-size: 0.8rem;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+}
+/* HEADINGS */
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 2.4rem;
+  word-spacing: 4px;
+  @include small-tablet {
+    font-size: 1.8rem;
+  }
+}
+
+h2 {
+  font-size: 1.8rem;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  @include small-tablet {
+    font-size: 1.5rem;
+  }
+}
+
+h2:after {
+  display: block;
+  height: 2px;
+  background-color: $orange;
+  content: "";
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  @include big-tablet {
+    font-size: 1rem;
+  }
+}
+
+/* BUTTONS */
+.btn:link,
+.btn:visited,
+input[type="submit"] {
+  @include btn;
+}
+
+.btn:hover,
+.btn:active,
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  @include btn-hov;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type="submit"] {
+  background-color: $orange;
+  border: 1px solid $orange;
+  color: #fff;
+  margin-right: 15px;
+}
+
+.btn-full:hover,
+.btn-full:active {
+  background-color: $dark-orange;
+  border: 1px solid $dark-orange;
+}
+
+.btn-ghost {
+  &:link,
+  &:visited {
+    border: 1px solid $orange;
+    color: $orange;
+  }
+  &:hover,
+  &:active {
+    border: 1px solid $dark-orange;
+    color: #fff;
+  }
+}
+
+section {
+  padding: 80px 0;
+  @include big-tablet {
+    padding: 60px 0;
+  }
+  @include small-tablet {
+    padding: 30px 0;
+  }
+  @include mobile {
+    padding: 25px 0;
+  }
+}
+
+/* ICONS */
+.icon-big {
+  font-size: 3.5rem;
+  display: block;
+  color: $orange;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+  &:hover {
+    color: $grey;
+  }
+}
+
+.icon-small {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  color: $orange;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  vertical-align: middle;
+  margin-top: -4px;
+  margin-right: 10px;
+  @include big-tablet {
+    width: 15px;
+    margin-right: 5px;
+  }
+}

@@ -1,0 +1,27 @@
+.box {
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
+  .city-feature {
+    margin-bottom: 5px;
+    @include big-tablet {
+      font-size: 0.8rem;
+    }
+  }
+
+  a {
+    color: $orange;
+    padding-bottom: 1px;
+    border-bottom: 1px solid $orange;
+    transition: border-bottom 0.2s, color 0.2s;
+
+    &:hover,
+    &:active {
+      color: $grey;
+      border-bottom: 1px solid transparent;
+    }
+  }
+}

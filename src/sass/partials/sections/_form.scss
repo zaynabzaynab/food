@@ -1,0 +1,101 @@
+.contact-form {
+  width: 60%;
+  margin: 0 auto;
+
+  label.error {
+    font-size: 0.9rem;
+    color: $dark-orange;
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  input.error,
+  select.error,
+  textarea.error {
+    background-color: #faf1e9;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+
+    &:focus {
+      border: 1px solid transparent;
+      box-shadow: 0 0 1px 2px $orange;
+    }
+  }
+  textarea {
+    height: 100px;
+  }
+
+  input[type="checkbox"] {
+    margin: 10px 5px 10px 0;
+  }
+
+  @include big-tablet {
+    width: 80%;
+  }
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.form-group {
+  display: block;
+  margin-bottom: 15px;
+  input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+  }
+  label {
+    position: relative;
+    cursor: pointer;
+    &::before {
+      content: "";
+      appearance: none;
+      background-color: transparent;
+      border: 1px solid #ccc;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+        inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+      padding: 10px;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+  }
+  input:checked + label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    width: 6px;
+    height: 14px;
+    border: solid $orange;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

@@ -1,0 +1,43 @@
+// === GOOGLE FONTS ===
+@mixin google-font($font) {
+  $font: unquote($font);
+  @import url(https://fonts.googleapis.com/css?family=#{$font});
+}
+
+// === BUTTONS ===
+@mixin btn {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 200px;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+@mixin btn-hov {
+  background-color: $dark-orange;
+}
+
+// === MEDIA  QUERIES ===
+@mixin desktop() {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin big-tablet() {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin small-tablet() {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
